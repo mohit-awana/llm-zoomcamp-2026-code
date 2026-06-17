@@ -1,0 +1,15 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.env
+
+01-agentic-rag/agentic_rag/ELASTICSEARCH_NOTES.md
+01-agentic-rag/agentic_rag/pydanticai_agentic_rag_notes.md
+01-agentic-rag/agentic_rag
