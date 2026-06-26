@@ -13,3 +13,5 @@ wheels/
 01-agentic-rag/agentic_rag/ELASTICSEARCH_NOTES.md
 01-agentic-rag/agentic_rag/pydanticai_agentic_rag_notes.md
 01-agentic-rag/agentic_rag
+02-vector-search/models/Xenova/all-MiniLM-L6-v2/model.onnx
+02-vector-search/models/Xenova/all-MiniLM-L6-v2/tokenizer.json
