@@ -13,5 +13,21 @@ services:
       - esdata:/usr/share/elasticsearch/data
     restart: unless-stopped
 
+
+
+  pgvector:
+    image: pgvector/pgvector:pg17
+    container_name: llm-zoomcamp-pgvector
+    environment:
+    - POSTGRES_USER=user
+    - POSTGRES_PASSWORD=pswd
+    - POSTGRES_DB=faq
+    ports:
+    - "5432:5432"
+    volumes:
+    - pgvector_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
 volumes:
   esdata:
+  pgvector_data:

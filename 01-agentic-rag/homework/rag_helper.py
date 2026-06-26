@@ -16,13 +16,13 @@ Make multiple searches with different keywords before answering.
 PROMPT_TEMPLATE = """
 QUESTION: {question}
 
-CONTEXT:
-{context}
+CONTEXT:  {context}
 """.strip()
 
 
 from dataclasses import dataclass
 from typing import Callable
+from ingest import vec_to_str
 
 from pydantic_ai import Agent
 
@@ -139,9 +139,9 @@ class AgenticRAG:
         instructions=AGENTIC_INSTRUCTIONS,
         model="openai-responses:gpt-5.4-mini",
     ):
-        self.index = index
-        self.instructions = instructions
-        self.model = model
+        self.index = index #Store the search index.
+        self.instructions = instructions #Store system prompt.
+        self.model = model #Store model name.
 
     async def rag(self, query):
 
@@ -159,6 +159,7 @@ class AgenticRAG:
             """
             call_tracker["count"] += 1  # Increment on every call
             return base_search_fn(query)
+        
         agent = Agent(
             self.model,
             instructions=self.instructions,
